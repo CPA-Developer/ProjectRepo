@@ -1,0 +1,13 @@
+@startuml Bank System
+
+skinparam style Strictuml
+
+!theme plain
+
+
+class HandyMangement {
+   
+}
+
+
+@enduml
