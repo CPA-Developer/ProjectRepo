@@ -1,5 +1,4 @@
-@startuml Bank System
-
+@startuml Handy Mangement
 skinparam style Strictuml
 
 !theme plain
