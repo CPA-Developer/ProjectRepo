@@ -8,5 +8,17 @@ class HandyMangement {
    
 }
 
+class workerController {
+   
+}
+
+class EntreprenuierController {
+   
+}
+
+class EmployeeController {
+
+}
+
 
 @enduml
