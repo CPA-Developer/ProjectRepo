@@ -8,17 +8,55 @@ class HandyMangement {
    
 }
 
-class workerController {
+class WorkerController {
    
 }
 
-class EntreprenuierController {
+class EntrepreneurController {
    
 }
 
 class EmployeeController {
 
 }
+
+class workerService{}
+class workerRepo{}
+
+class EmployeeService{}
+class EmployeeRepo{}
+
+class EntreprenuerService{}
+class EntreprenuerRepo{}
+
+
+
+
+HandyMangement .. WorkerController
+HandyMangement .. EntrepreneurController
+HandyMangement .. EmployeeController
+
+
+WorkerController ..> workerService
+EntrepreneurController ..> EntreprenuerService
+EmployeeController ..> EmployeeService
+
+
+workerService .. workerRepo
+EmployeeService .. EmployeeRepo
+EntreprenuerService .. EntreprenuerRepo
+
+workerRepo o-- Resume 
+EntreprenuerRepo o--Worker 
+EntreprenuerRepo o--EmployeeRec
+EntreprenuerRepo o-- TurnOver
+EmployeeRepo o-- PayRec 
+PayRec -- EmployeeRec
+
+Resume --Worker
+
+
+
 
 
 @enduml
