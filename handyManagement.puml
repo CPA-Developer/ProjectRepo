@@ -5,11 +5,15 @@ skinparam style Strictuml
 
 
 class HandyMangement {
-   ///+
+
 }
 
 
 class WorkerController {
+   findworkerbyname()
+   findWorkerByCategory()
+   findWorkerByJob()
+
     
 }
 
@@ -21,8 +25,16 @@ class EmployeeController {
 
 }
 
-class workerService{}
-class workerRepo{}
+class workerService{
+   findWorkerByserviceProvided()
+   findWorkerByAreaAssigned()
+
+}
+class workerRepo{
+   generateWorkerReport()
+   assignWorkerWage()
+   generateWorkerPortfolio()
+}
 
 class EmployeeService{}
 class EmployeeRepo{}
