@@ -18,7 +18,9 @@ class WorkerController {
 }
 
 class EntrepreneurController {
-   
+     findSalesByDate()
+   findWorkOrderByDate()
+   createPayRoll(StartDate, EndDate)
 }
 
 class EmployeeController {
