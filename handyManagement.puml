@@ -47,13 +47,13 @@ workerService .. workerRepo
 EmployeeService .. EmployeeRepo
 EntreprenuerService .. EntreprenuerRepo
 
-workerRepo o-- Resume 
-EntreprenuerRepo o--Worker 
+workerRepo o--"*" Resume 
+EntreprenuerRepo o--"*" Worker 
 
-EmployeeRepo o-- Appointment 
-Appointment -- Worker
+EmployeeRepo o--"*" Appointment 
+Appointment --"+" Worker
 
-Resume --Worker
+Resume --"+" Worker
 
 Worker -- "HandyManagement Database"
 Appointment -- "HandyManagement Database"
