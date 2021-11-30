@@ -29,7 +29,8 @@ class EmployeeRepo{}
 class EntreprenuerService{}
 class EntreprenuerRepo{}
 
-
+database "HandyManagement Database"{
+}
 
 
 HandyMangement .. WorkerController
@@ -48,12 +49,15 @@ EntreprenuerService .. EntreprenuerRepo
 
 workerRepo o-- Resume 
 EntreprenuerRepo o--Worker 
-EntreprenuerRepo o--EmployeeRec
-EntreprenuerRepo o-- TurnOver
-EmployeeRepo o-- PayRec 
-PayRec -- EmployeeRec
+
+EmployeeRepo o-- Appointment 
+Appointment -- Worker
 
 Resume --Worker
+
+Worker -- "HandyManagement Database"
+Appointment -- "HandyManagement Database"
+Resume -- "HandyManagement Database"
 
 
 
