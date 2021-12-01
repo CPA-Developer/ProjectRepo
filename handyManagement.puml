@@ -10,45 +10,51 @@ class HandyMangement {
 
 
 class WorkerController {
-   findworkerbyname()
-   findWorkerByCategory()
-   findWorkerByJob()
+  
+   getWorkerByCategory()
+   getWorkerByJob()
 
     
 }
 
 class EntrepreneurController {
-     findSalesByDate()
-   findWorkOrderByDate()
+     getSalesByDate()
+   getWorkOrderByDate()
    createPayRoll(StartDate, EndDate)
 }
 
 class EmployeeController {
-    findPayRateByEmpNo(employeeNo)
-    findEmployeeRecordByEmpNo(empNo)
-    findPayRecordByEmpNo(empNo)
+    getPayRateByEmpNo(employeeNo)
+    getEmployeeRecordByEmpNo(empNo)
+    getPayRecordByEmpNo(empNo)
 }
 
 class workerService{
-   findWorkerByserviceProvided()
-   findWorkerByAreaAssigned()
+   SearchJob()
+  
 
 }
 class workerRepo{
-   generateWorkerReport()
-   assignWorkerWage()
-   generateWorkerPortfolio()
+  getJobsByKeyword(keyword)
 }
 
-class EmployeeService{}
+class EmployeeService{
+   
+}
 class EmployeeRepo{}
 
-class EntreprenuerService{}
-class EntreprenuerRepo{}
+class EntreprenuerService{
+   Worker worker
+    getWorkerbyname()
+}
+class EntreprenuerRepo{
+   Worker findWorkerByName(name)
+}
 
 database "HandyManagement Database"{
 }
 
+workerService .right. EntreprenuerService
 
 HandyMangement .. WorkerController
 HandyMangement .. EntrepreneurController
