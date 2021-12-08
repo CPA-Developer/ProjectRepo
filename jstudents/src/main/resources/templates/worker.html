@@ -8,5 +8,16 @@
 </head>
 <body>
     <h1>Worker</h1>
+    <br><br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th colspan="2">Job Title Applying</th>
+        </tr>
+        <tr th:each="worker:${workers}">
+            <td th:text=${worker.firstName}></td>
+            <td th:text=${worker.jobTitle}></td>
+        </tr>
+    </table>
 </body>
 </html>
