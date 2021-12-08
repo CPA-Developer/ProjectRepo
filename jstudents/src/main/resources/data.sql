@@ -1,12 +1,22 @@
-INSERT INTO EMPLOYEE(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,JOB_TITLE,PAYRATE)
-VALUES
-(NULL,'Abishek','Humagain','Manager',35.00),
-(NULL,'Colin','Banger','Project Lead',30.00),
-(NULL,'Subin','Sebastrian','Worker',25.00),
-(NULL,'Linse','Mathew','Plumber',24.00),
-(NULL,'Dhruv','Jodha','Carpenter',20.00),
-(NULL,'Sam','Collins','Organizer',30.00),
-(NULL,'Bella','Chao','Contractor',30.00),
-(NULL,'Lauren','Ellas','Worker',28.00),
-(NULL,'Ben','Higgs','Rental',32.00),
-(NULL,'Sushant','Newpan','Sales',20.00);
+INSERT INTO WORKER(WORKER_ID,FIRST_NAME,LAST_NAME,JOB_TITLE) VALUES
+(NULL,'Abishek','Humagain','Manager'),
+(NULL,'Colin','Banger','Project Lead'),
+(NULL,'Subin','Sebastrian','Worker'),
+(NULL,'Linse','Mathew','Plumber'),
+(NULL,'Dhruv','Jodha','Carpenter');
+
+INSERT INTO APPOINTMENT(APPOINTMENT_ID, APPOINTMENT_DATE, WORKER_ID) VALUES
+(   NULL, '08/17/20201', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Abishek')),
+(   NULL, '03/28/20201', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Colin')),
+(   NULL, '12/17/20201', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Subin')),
+(   NULL, '05/21/20201', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Linse')),
+(   NULL, '08/28/20201', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Dhruv'));
+
+
+INSERT INTO RESUMETABLE(RESUMETABLE_ID, PHONE, EMAILADDRESS, WORKER_ID) VALUES
+(   NULL, '1234567891', 'abishek@gmail.com', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Abishek')),
+(   NULL, '1234567891', 'colin@gmail.com', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Colin')),
+(   NULL, '1234567891', 'subin@gmail.com', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Subin')),
+(   NULL, '1234567891', 'linse@gmail.com', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Linse')),
+(   NULL, '1234567891', 'dhruv@gmail.com', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Dhruv'));
+
