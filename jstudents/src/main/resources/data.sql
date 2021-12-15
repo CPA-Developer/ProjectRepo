@@ -3,7 +3,12 @@ INSERT INTO WORKER(WORKER_ID,FIRST_NAME,LAST_NAME,JOB_TITLE) VALUES
 (NULL,'Colin','Banger','Project Lead'),
 (NULL,'Subin','Sebastrian','Worker'),
 (NULL,'Linse','Mathew','Plumber'),
-(NULL,'Dhruv','Jodha','Carpenter');
+(NULL,'Dhruv','Jodha','Carpenter'),
+(NULL,'Sam','Collins','Technician'),
+(NULL,'Nick','McDonald','Coach'),
+(NULL,'Wollow','Ellas','Photographer'),
+(NULL,'Ben','Higgs','Property Manager'),
+(NULL,'Alex','Zab','Superviser');
 
 INSERT INTO APPOINTMENT(APPOINTMENT_ID, APPOINTMENT_DATE, WORKER_ID) VALUES
 (   NULL, '08/17/20201', (SELECT WORKER_ID FROM WORKER WHERE FIRST_NAME='Abishek')),
