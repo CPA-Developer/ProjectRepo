@@ -4,25 +4,26 @@ skinparam style Strictuml
 !theme plain
 
 
+
 class HandyMangement {
 
 }
 
 
-class WorkerController {
+class ManagementController {
   
   
 
     
 }
 
-class EntrepreneurController {
+class ManagementController {
     
     
   
 }
 
-class EmployeeController {
+class ManagementController {
    '  getPayRateByEmpNo(employeeNo)
    '  getEmployeeRecordByEmpNo(empNo)
    '  getPayRecordByEmpNo(empNo)
@@ -59,14 +60,13 @@ database "HandyManagement Database"{
 
 workerService .right. EntreprenuerService
 
-HandyMangement .. WorkerController
-HandyMangement .. EntrepreneurController
-HandyMangement .. EmployeeController
+HandyMangement .. ManagementController
 
 
-WorkerController ..> workerService
-EntrepreneurController ..> EntreprenuerService
-EmployeeController ..> EmployeeService
+
+ManagementController ..> workerService
+ManagementController ..> EntreprenuerService
+ManagementController ..> EmployeeService
 
 
 workerService .. workerRepo
