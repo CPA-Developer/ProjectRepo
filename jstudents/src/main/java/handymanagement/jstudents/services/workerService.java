@@ -11,7 +11,7 @@ import handymanagement.jstudents.repositories.workerRepo;
 @Service
 public class workerService {
 
-    static workerRepo workerRepo;
+    workerRepo workerRepo;
 
     @Autowired
     public workerService(workerRepo workerRepo) {
@@ -19,9 +19,12 @@ public class workerService {
         this.workerRepo = workerRepo;
     }
 
-    public static List<Worker> findWorkers() {
-        List<Worker> workers = workerRepo.findAll();
-        return workers;
+    public List<Worker> findWorkers() {
+        return workerRepo.findAll();
+    }
+    public Iterable<Worker> findWorkerByFirstName(String firstName)
+    {
+        return workerRepo.findByFirstNameIgnoreCaseStartingWith(firstName);
     }
 
 }
