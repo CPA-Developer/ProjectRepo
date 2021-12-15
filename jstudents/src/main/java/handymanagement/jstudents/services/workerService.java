@@ -26,5 +26,9 @@ public class workerService {
     {
         return workerRepo.findByFirstNameIgnoreCaseStartingWith(firstName);
     }
+    public Iterable<Worker> findWorkerByJob(String job)
+    {
+        return workerRepo.findByJobTitleIgnoreCaseStartingWith(job);
+    }
 
 }

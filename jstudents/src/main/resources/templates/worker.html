@@ -24,9 +24,16 @@
     <div th:insert="fragments/frags :: navbar" class="navbar"></div>
     <br /><br />
     <form action="/workerFName" class="center">
-      <p><b>Type Fist Name</b></p>
+      <p><b>Type Fist Name (Full name or letters)</b></p>
       <label for="keyword">Enter First Name</label>
       <input type="text" name="keyword" , id="keyword" />
+      <br />
+      <input type="submit" value="Search" />
+    </form>
+    <form action="/workerJob" class="center">
+      <p><b>Type Job Title (Full title or letters)</b></p>
+      <label for="job">Enter Job Title</label>
+      <input type="text" name="job" , id="job" />
       <br />
       <input type="submit" value="Search" />
     </form>
