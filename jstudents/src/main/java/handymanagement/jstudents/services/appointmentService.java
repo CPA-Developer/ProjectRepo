@@ -25,5 +25,9 @@ public class appointmentService {
         List<Appointment> appointments = appointmentRepo.findAll();
         return appointments;
     }
+    public static List<Appointment> findAppointmentByDate() {
+        List<Appointment> appointments = appointmentRepo.findByAppointmentDate("10/11/2021");
+        return appointments;
+    }
 
 }
