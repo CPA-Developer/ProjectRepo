@@ -16,5 +16,22 @@
     <h1>Resume</h1>
     <div th:insert="fragments/frags :: navbar" class="navbar">
     </div>
+    <br><br>
+    <table>
+        <tr>
+            <th>Resume Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th colspan="2">email Address</th>
+             
+        </tr>
+        <tr th:each="resume:${resumes}">
+            <td th:text=${resume.resumeId}></td>
+            <td th:text="${resume.workerId.firstName} + ' ' + ${resume.workerId.lastName}" ></td>
+            <td th:text=${resume.phone}></td>
+            <td th:text=${resume.emailAddress}></td>
+            
+        </tr>
+    </table>
 </body>
 </html>

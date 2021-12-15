@@ -11,7 +11,7 @@ import handymanagement.jstudents.repositories.appointmentRepo;
 @Service
 public class appointmentService {
     @Autowired
-    appointmentRepo appointmentRepo;
+    static appointmentRepo appointmentRepo;
     @Autowired
     workerService workerService;
 
@@ -19,6 +19,11 @@ public class appointmentService {
         super();
         this.appointmentRepo = appointmentRepo;
         this.workerService = workerService;
+    }
+
+    public static List<Appointment> findAppointments() {
+        List<Appointment> appointments = appointmentRepo.findAll();
+        return appointments;
     }
 
 }

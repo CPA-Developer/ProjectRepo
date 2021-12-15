@@ -1,12 +1,16 @@
 body {
-    background-color:teal
+    background-color:skyblue
 }
 
 a{
-    background-color: #00AAAA;
+    background-color: #8dd3d3;
     padding:10px;
+    color: black;
 }
 
+a:hover{
+    color: blue;
+}
 form.center
 {
     border:solid black;
@@ -24,7 +28,7 @@ div.navbar
 
 }
 
-h1.heading{
+h1{
     text-align: center;
 }
 

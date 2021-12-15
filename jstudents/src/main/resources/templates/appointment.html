@@ -16,5 +16,22 @@
     <h1>Appointment</h1>
     <div th:insert="fragments/frags :: navbar" class="navbar">
     </div>
+    <br><br>
+    <table>
+        <tr>
+            <th>Appointment Id</th>
+            <th>Name</th>
+            <th>Appointment Date</th>
+          
+             
+        </tr>
+        <tr th:each="appointment:${appointments}">
+            <td th:text=${appointment.appointmentId}></td>
+            <td th:text="${appointment.workerId.firstName} + ' ' + ${appointment.workerId.lastName}" ></td>
+            <td th:text=${appointment.appointmentDate}></td>
+           
+            
+        </tr>
+    </table>
 </body>
 </html>

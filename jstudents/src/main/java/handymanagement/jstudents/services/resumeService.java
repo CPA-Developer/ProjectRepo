@@ -12,7 +12,7 @@ import handymanagement.jstudents.repositories.resumeRepo;
 @Service
 public class resumeService {
     @Autowired
-    resumeRepo resumeRepo;
+    static resumeRepo resumeRepo;
     @Autowired
     workerService workerService;
 
@@ -20,5 +20,10 @@ public class resumeService {
         super();
         this.resumeRepo = resumeRepo;
         this.workerService = workerService;
+    }
+
+    public static List<Resume> findResumes() {
+        List<Resume> resumes = resumeRepo.findAll();
+        return resumes;
     }
 }

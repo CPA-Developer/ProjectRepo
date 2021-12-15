@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "RESUME")
+@Table(name = "RESUMETABLE")
 public class Resume {
 
     @Id
@@ -31,7 +31,7 @@ public class Resume {
     String emailAddress;
 
     @ManyToOne
-    @JoinColumn(name = "WORKER_ID", nullable = false)
+    @JoinColumn(name = "WORKER_ID", nullable = true)
     Worker workerId;
 
 }
