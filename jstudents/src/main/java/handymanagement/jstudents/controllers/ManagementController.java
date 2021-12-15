@@ -53,15 +53,15 @@ public class ManagementController {
         return "worker";  
     }
     @GetMapping("/workerFName")
-    public String getWorkerFName( @RequestParam(required = false) String keyword, Model model) {
-        boolean workerNameValid = (keyword == null || keyword.isEmpty());
-        if (workerNameValid)
+    public String getWorkerFName(@RequestParam(required=false) String keyword, Model model) {
+        boolean workerNameInvalid = (keyword == null || keyword.isEmpty());
+        if (workerNameInvalid)
         {
-            model.addAttribute("workers", workerservice.findWorkerByFirstName(keyword));
+            model.addAttribute("workers", workerservice.findWorkers());
         }
         else
         {
-            model.addAttribute("workers", workerservice.findWorkers());
+            model.addAttribute("workers", workerservice.findWorkerByFirstName(keyword));
         }
         return "worker";
         
