@@ -1,0 +1,33 @@
+body {
+    background-color:teal
+}
+
+a{
+    background-color: #00AAAA;
+    padding:10px;
+}
+
+form.center
+{
+    border:solid black;
+    padding: 20px;
+    width:30%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div.navbar
+{
+    padding: 20px;
+    text-align: center;
+
+}
+
+h1.heading{
+    text-align: center;
+}
+
+td{
+    padding : 5px;
+}
