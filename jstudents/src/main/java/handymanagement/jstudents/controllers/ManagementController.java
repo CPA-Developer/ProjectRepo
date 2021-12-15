@@ -75,5 +75,19 @@ public class ManagementController {
         return "worker";
 
     }
+    @GetMapping("/workerJob")
+    public String getWorkerJob(@RequestParam(required=false) String job, Model model) {
+        boolean jobNameInvalid = (job == null || job.isEmpty());
+        if (jobNameInvalid)
+        {
+            model.addAttribute("workers", workerservice.findWorkers());
+        }
+        else
+        {
+            model.addAttribute("workers", workerservice.findWorkerByJob(job));
+        }
+        return "worker";
+        
+    }
 
 }
