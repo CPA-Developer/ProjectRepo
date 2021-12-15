@@ -17,15 +17,17 @@ class WorkerController {
 }
 
 class EntrepreneurController {
-     getAppointmentByDate()
+    
     
   
 }
 
 class EmployeeController {
-    getPayRateByEmpNo(employeeNo)
-    getEmployeeRecordByEmpNo(empNo)
-    getPayRecordByEmpNo(empNo)
+   '  getPayRateByEmpNo(employeeNo)
+   '  getEmployeeRecordByEmpNo(empNo)
+   '  getPayRecordByEmpNo(empNo)
+
+    
 }
 
 class workerService{
@@ -38,9 +40,11 @@ class workerRepo{
 }
 
 class EmployeeService{
-   
+    SearchAppointment()
 }
-class EmployeeRepo{}
+class EmployeeRepo{
+   getAppointmentByDate()
+}
 
 class EntreprenuerService{
    Worker worker
