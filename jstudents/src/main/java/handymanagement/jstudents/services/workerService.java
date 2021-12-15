@@ -22,8 +22,8 @@ public class workerService {
     public List<Worker> findWorkers() {
         return workerRepo.findAll();
     }
-    public Iterable<Worker> findWorkerByFirstName(String firstName)
-    {
+
+    public Iterable<Worker> findWorkerByFirstName(String firstName) {
         return workerRepo.findByFirstNameIgnoreCaseStartingWith(firstName);
     }
 

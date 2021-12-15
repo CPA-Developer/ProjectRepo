@@ -26,4 +26,8 @@ public class resumeService {
         List<Resume> resumes = resumeRepo.findAll();
         return resumes;
     }
+
+    public static Iterable<Resume> findWorkerContactByFirstName(Integer keyword) {
+        return resumeRepo.findEmailAddressByResumeId(keyword);
+    }
 }

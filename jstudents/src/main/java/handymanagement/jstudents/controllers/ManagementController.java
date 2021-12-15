@@ -20,8 +20,7 @@ public class ManagementController {
     workerService workerservice;
 
     @Autowired
-    public ManagementController(workerService workerService)
-    {
+    public ManagementController(workerService workerService) {
         super();
         this.workerservice = workerService;
     }
@@ -45,26 +44,36 @@ public class ManagementController {
         return "resume";
     }
 
+    @GetMapping("/workerContact")
+    public String getWorkerContact(@RequestParam(required = false) Integer keyword, Model model) {
+        boolean workerNameInvalid = (keyword == null);
+        if (workerNameInvalid) {
+            model.addAttribute("resumes", resumeService.findResumes());
+        } else {
+            model.addAttribute("resumes", resumeService.findWorkerContactByFirstName(keyword));
+        }
+        return "resume";
+
+    }
+
     @GetMapping("/worker")
-    public String getWorker( Model model) {
-    
+    public String getWorker(Model model) {
+
         List<Worker> workers = workerservice.findWorkers();
         model.addAttribute("workers", workers);
-        return "worker";  
+        return "worker";
     }
+
     @GetMapping("/workerFName")
-    public String getWorkerFName(@RequestParam(required=false) String keyword, Model model) {
+    public String getWorkerFName(@RequestParam(required = false) String keyword, Model model) {
         boolean workerNameInvalid = (keyword == null || keyword.isEmpty());
-        if (workerNameInvalid)
-        {
+        if (workerNameInvalid) {
             model.addAttribute("workers", workerservice.findWorkers());
-        }
-        else
-        {
+        } else {
             model.addAttribute("workers", workerservice.findWorkerByFirstName(keyword));
         }
         return "worker";
-        
+
     }
 
 }

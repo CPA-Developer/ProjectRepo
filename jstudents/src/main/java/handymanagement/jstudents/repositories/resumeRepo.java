@@ -11,4 +11,6 @@ import org.springframework.data.repository.CrudRepository;
 @Repository
 public interface resumeRepo extends CrudRepository<Resume, Integer> {
     List<Resume> findAll();
+
+    List<Resume> findEmailAddressByResumeId(Integer keyword);
 }
