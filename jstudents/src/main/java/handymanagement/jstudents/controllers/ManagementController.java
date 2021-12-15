@@ -37,6 +37,18 @@ public class ManagementController {
         return "appointment";
     }
 
+    @GetMapping("/workerAppointment")
+    public String getWorkerAppointment(@RequestParam(required = false) String keyword, Model model) {
+        boolean workerNameInvalid = (keyword == null || keyword.isEmpty());
+        if (workerNameInvalid) {
+            model.addAttribute("appointments", appointmentService.findAppointments());
+        } else {
+            model.addAttribute("appointments", appointmentService.findWorkerContactByAppointment(keyword));
+        }
+        return "appointment";
+
+    }
+
     @GetMapping("/resume")
     public String resume(Model model) {
         List<Resume> resumes = resumeService.findResumes();
@@ -75,19 +87,17 @@ public class ManagementController {
         return "worker";
 
     }
+
     @GetMapping("/workerJob")
-    public String getWorkerJob(@RequestParam(required=false) String job, Model model) {
+    public String getWorkerJob(@RequestParam(required = false) String job, Model model) {
         boolean jobNameInvalid = (job == null || job.isEmpty());
-        if (jobNameInvalid)
-        {
+        if (jobNameInvalid) {
             model.addAttribute("workers", workerservice.findWorkers());
-        }
-        else
-        {
+        } else {
             model.addAttribute("workers", workerservice.findWorkerByJob(job));
         }
         return "worker";
-        
+
     }
 
 }

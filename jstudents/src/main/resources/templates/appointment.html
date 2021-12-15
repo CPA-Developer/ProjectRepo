@@ -17,6 +17,15 @@
     <div th:insert="fragments/frags :: navbar" class="navbar">
     </div>
     <br><br>
+
+    <form action="/workerAppointment" class="center">
+        <p><b>Search Worker Interview Appointment </b></p>
+        <label for="keyword">Enter Date(mm/dd/yyyy)</label>
+        <input type="text" name="keyword" , id="keyword" />
+        <br />
+        <input type="submit" value="Search" />
+      </form>
+
     <table>
         <tr>
             <th>Appointment Id</th>
